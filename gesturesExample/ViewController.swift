@@ -23,3 +23,72 @@ class ViewController: UIViewController {
 
 }
 
+
+class TapViewController: UIViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    @IBOutlet weak var imgView1: UIImageView!
+    
+    var isTap = false
+    @IBAction func tapOnImageGesture(_ sender: UITapGestureRecognizer) {
+        
+        //2 times tap on image
+        
+        if !isTap{
+         
+            imgView1.transform = CGAffineTransform.init(scaleX: 1.2, y: 1.2)
+            
+            isTap = true
+            
+        }
+        else
+        {
+            
+            imgView1.transform = CGAffineTransform.init(scaleX: 1.0, y: 1.0)
+            
+            isTap = false
+        }
+        
+        
+    }
+    
+    
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
+}
+
+
+class PinchViewController: UIViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    @IBOutlet weak var imgView1: UIImageView!
+    
+    @IBAction func pinchOnImageGestureAction(_ sender: UIPinchGestureRecognizer) {
+        
+        
+        imgView1.transform = CGAffineTransform.init(scaleX: sender.scale, y: sender.scale)
+        
+        
+    }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
+}
+
+
