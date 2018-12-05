@@ -160,11 +160,52 @@
                         <segue destination="if6-MK-3zQ" kind="relationship" relationship="viewControllers" id="3Qq-di-pIO"/>
                         <segue destination="rkR-dX-hcD" kind="relationship" relationship="viewControllers" id="DjF-VX-gHU"/>
                         <segue destination="5yb-Xt-rlT" kind="relationship" relationship="viewControllers" id="gd5-ah-Bf7"/>
+                        <segue destination="lxL-ha-2SK" kind="relationship" relationship="viewControllers" id="30X-vg-HlJ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sZ7-wD-sJq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="9" y="95"/>
+        </scene>
+        <!--Swipe Gesture-->
+        <scene sceneID="Ao1-RE-qu1">
+            <objects>
+                <viewController title="Swipe Gesture" id="lxL-ha-2SK" customClass="SwipeGestureViewController" customModule="gesturesExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="l98-3j-hYW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img1" translatesAutoresizingMaskIntoConstraints="NO" id="dHg-TV-KFy">
+                                <rect key="frame" x="9" y="180" width="357" height="208"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="hnh-pA-cmr" appends="YES" id="Lki-33-5Qy"/>
+                                    <outletCollection property="gestureRecognizers" destination="7tP-np-VZ3" appends="YES" id="83R-f4-BgL"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="m9x-ga-hfF"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Swipe Gesture" id="Rn0-bY-cHX"/>
+                    <connections>
+                        <outlet property="imgView1" destination="dHg-TV-KFy" id="hcf-5c-bYn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jcy-3e-xrM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="hnh-pA-cmr" userLabel="left">
+                    <connections>
+                        <action selector="LeftOnImageGesture:" destination="lxL-ha-2SK" id="CeX-6S-qAu"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="7tP-np-VZ3" userLabel="right">
+                    <connections>
+                        <action selector="RightOnImageGesture:" destination="lxL-ha-2SK" id="ClD-oc-8FM"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-1622" y="936"/>
         </scene>
     </scenes>
     <resources>

@@ -157,4 +157,54 @@ class RotateGestureViewController: UIViewController {
 
 
 
+class SwipeGestureViewController: UIViewController {
+    
+    
+    let arr = [#imageLiteral(resourceName: "img1"),#imageLiteral(resourceName: "img2"),#imageLiteral(resourceName: "img4"),#imageLiteral(resourceName: "img5")]
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    @IBOutlet weak var imgView1: UIImageView!
+    
+    /////?????? can you hear me?? are you thr??
+    
+    var c = 0
+    
+    @IBAction func LeftOnImageGesture(_ sender: UISwipeGestureRecognizer) {
+        
+        if c < 3{ //0 - 1 - 2 - 3
+            c += 1
+            print("Left Gesture \(c)")
+            imgView1.image = arr[c]
+        }
+    }
+    
+    @IBAction func RightOnImageGesture(_ sender: UISwipeGestureRecognizer) {
+        
+        if c > 0{ // 3 - 2 - 1 - 0
+            c -= 1
+            print("Right Gesture \(c)")
+            imgView1.image = arr[c]
+        }
+        
+    }
+    
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
+}
+
+
+
+
+
+
+
 
