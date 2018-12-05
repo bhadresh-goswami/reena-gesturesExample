@@ -92,3 +92,69 @@ class PinchViewController: UIViewController {
 }
 
 
+
+class PanGestureViewController: UIViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    @IBOutlet weak var imgView1: UIImageView!
+    
+    /////?????? can you hear me?? are you thr??
+    		
+    @IBAction func panOnImageGesture(_ sender: UIPanGestureRecognizer) {
+        
+        let points = sender.translation(in: self.view)
+        
+        imgView1.transform = CGAffineTransform.init(translationX: points.x, y: points.y)
+        
+        
+        
+    }
+    
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
+}
+
+
+
+class RotateGestureViewController: UIViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    @IBOutlet weak var imgView1: UIImageView!
+    
+    /////?????? can you hear me?? are you thr??
+    
+    @IBAction func RotationOnImageGesture(_ sender: UIRotationGestureRecognizer) {
+        
+        //let points = sender.translation(in: self.view)
+        
+        imgView1.transform = CGAffineTransform.init(rotationAngle: sender.rotation)
+        
+        
+        
+    }
+    
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
+}
+
+
+
+

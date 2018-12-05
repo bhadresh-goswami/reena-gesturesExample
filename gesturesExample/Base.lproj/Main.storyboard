@@ -10,6 +10,74 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Rotate Gesture-->
+        <scene sceneID="nNQ-Yz-CcT">
+            <objects>
+                <viewController title="Rotate Gesture" id="5yb-Xt-rlT" customClass="RotateGestureViewController" customModule="gesturesExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jUs-9q-qUl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img1" translatesAutoresizingMaskIntoConstraints="NO" id="h8i-Pe-1ac">
+                                <rect key="frame" x="121" y="258" width="132" height="151"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="f13-bQ-S9e" appends="YES" id="Ak1-uE-sCc"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="Mgk-eG-swq"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Rotate Gesture" id="Nm4-Ee-7gE"/>
+                    <connections>
+                        <outlet property="imgView1" destination="h8i-Pe-1ac" id="Rl3-ic-dAt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Xy-e2-JNC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <rotationGestureRecognizer id="f13-bQ-S9e">
+                    <connections>
+                        <action selector="RotationOnImageGesture:" destination="5yb-Xt-rlT" id="nsE-sF-HI3"/>
+                    </connections>
+                </rotationGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-834.39999999999998" y="930.58470764617698"/>
+        </scene>
+        <!--Pan Gestrure-->
+        <scene sceneID="ozw-Pw-rbF">
+            <objects>
+                <viewController title="Pan Gestrure" id="rkR-dX-hcD" customClass="PanGestureViewController" customModule="gesturesExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hQu-mu-B65">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img3" translatesAutoresizingMaskIntoConstraints="NO" id="rXt-pF-6BS">
+                                <rect key="frame" x="67" y="214" width="240" height="183"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="7Mm-Yl-iYs" appends="YES" id="lYB-QL-7oK"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="zA4-ox-w77"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Pan Gesture" id="02y-6h-X9C"/>
+                    <connections>
+                        <outlet property="imgView1" destination="rXt-pF-6BS" id="iIU-6h-9QS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bgN-kA-Xtj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="7Mm-Yl-iYs">
+                    <connections>
+                        <action selector="panOnImageGesture:" destination="rkR-dX-hcD" id="1P6-FZ-u5Q"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="174" y="853"/>
+        </scene>
         <!--Pinch Gesture-->
         <scene sceneID="5hc-VD-hfG">
             <objects>
@@ -90,6 +158,8 @@
                     <connections>
                         <segue destination="0Gh-Zr-xo5" kind="relationship" relationship="viewControllers" id="jbE-sZ-xqQ"/>
                         <segue destination="if6-MK-3zQ" kind="relationship" relationship="viewControllers" id="3Qq-di-pIO"/>
+                        <segue destination="rkR-dX-hcD" kind="relationship" relationship="viewControllers" id="DjF-VX-gHU"/>
+                        <segue destination="5yb-Xt-rlT" kind="relationship" relationship="viewControllers" id="gd5-ah-Bf7"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sZ7-wD-sJq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -100,5 +170,6 @@
     <resources>
         <image name="img1" width="1600" height="1600"/>
         <image name="img2" width="512" height="411"/>
+        <image name="img3" width="512" height="512"/>
     </resources>
 </document>
